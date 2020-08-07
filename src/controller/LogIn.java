@@ -17,21 +17,19 @@ import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Controller {
+public class LogIn {
     @FXML
     TextField email;
     @FXML
     TextField passWord;
 
     public void logIn(ActionEvent event) {
-        Pattern patternEmail = Pattern.compile("^[a-z][a-z0-9_.]{5,32}@\\w{2,}(\\.[a-z0-9]{2,4}){1,2}$");
-        Pattern patternPassWord = Pattern.compile("^.{6,20}$");
-        Matcher matcherP = patternPassWord.matcher(passWord.getText());
+        Pattern patternEmail = Pattern.compile("^ ^[\\\\w!#$%&’*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$");
         Matcher matcherE = patternEmail.matcher(email.getText());
-        if(!matcherE.matches() && !matcherP.matches()){
+        if(!matcherE.matches()){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Invalid =_=");
-            alert.setHeaderText("Invalid Email + Invalid Password");
+            alert.setTitle("Invalid Email");
+            alert.setHeaderText("Enter a valid email");
             alert.show();
         }
 
