@@ -1,22 +1,25 @@
 package controller;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
-import service.DicionaryHashMap;
-
-import java.util.HashMap;
 
 public class MainRun extends Application {
 
     public static void main(String[] args) {
         launch(args);
     }
-    String pathSrcDic = "dictionary.txt";
-    DicionaryHashMap fileDicConverted = new DicionaryHashMap(pathSrcDic);
-    HashMap<String, String> dicHashMap = fileDicConverted.readToHashMapDic();
-
     @Override
     public void start(Stage primaryStage) {
-
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("logIn.fxml"));
+            Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
