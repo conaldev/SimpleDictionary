@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="688.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WordDetail">
+   <children>
+      <Label layoutX="374.0" layoutY="53.0" prefHeight="47.0" prefWidth="147.0" text="WORD :" textFill="#044ad7">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label fx:id="word" layoutX="530.0" layoutY="47.0" prefHeight="58.0" prefWidth="110.0" text="Label" textFill="#da0f0f">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="pronounce" layoutY="235.0" prefHeight="453.0" prefWidth="264.0" text="asd" />
+      <TextArea fx:id="meaning" layoutX="464.0" layoutY="235.0" prefHeight="453.0" prefWidth="690.0" text="asdsad" />
+      <Label layoutX="82.0" layoutY="182.0" text="Pronounce" textFill="#ee07d7">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+      <Label layoutX="346.0" layoutY="182.0" text="Type" textFill="#22a813">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+      <Label layoutX="791.0" layoutY="182.0" text="Meaning">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+      <TextArea fx:id="type" layoutX="264.0" layoutY="235.0" prefHeight="453.0" prefWidth="200.0" text="wqdw" />
+      <Button layoutX="24.0" layoutY="21.0" mnemonicParsing="false" onAction="#goBack" text="go back">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

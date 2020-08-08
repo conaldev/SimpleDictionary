@@ -16,16 +16,16 @@
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Button layoutX="338.0" layoutY="122.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="137.0" text="Search" />
+      <Button layoutX="338.0" layoutY="122.0" mnemonicParsing="false" onAction="#search" prefHeight="43.0" prefWidth="137.0" text="Search" />
       <Button layoutX="509.0" layoutY="122.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="137.0" text="Add" />
       <Button layoutX="686.0" layoutY="122.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="137.0" text="Edit" />
       <Button layoutX="862.0" layoutY="122.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="137.0" text="Delete" />
       <TableView fx:id="table" layoutX="79.0" layoutY="217.0" prefHeight="434.0" prefWidth="934.0">
         <columns>
-          <TableColumn fx:id="word" prefWidth="135.00003051757812" text="WORD" />
-          <TableColumn fx:id="pronounce" prefWidth="148.0" text="PRONOUNCE" />
-            <TableColumn fx:id="type" prefWidth="98.0" text="TYPE" />
-            <TableColumn fx:id="meaning" minWidth="0.0" prefWidth="552.0" text="               MEANING" />
+          <TableColumn fx:id="word" prefWidth="106.00003051757812" text="WORD" />
+          <TableColumn fx:id="pronounce" prefWidth="107.0" text="PRONOUNCE" />
+            <TableColumn fx:id="type" prefWidth="99.0" text="TYPE" />
+            <TableColumn fx:id="meaning" minWidth="0.0" prefWidth="622.0" text="               MEANING" />
         </columns>
       </TableView>
    </children>

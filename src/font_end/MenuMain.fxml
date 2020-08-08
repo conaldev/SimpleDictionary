@@ -16,7 +16,7 @@
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Button layoutX="338.0" layoutY="122.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="137.0" text="Search" />
+      <Button layoutX="338.0" layoutY="122.0" mnemonicParsing="false" onAction="#search" prefHeight="43.0" prefWidth="137.0" text="Search" />
       <Button layoutX="509.0" layoutY="122.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="137.0" text="Add" />
       <Button layoutX="686.0" layoutY="122.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="137.0" text="Edit" />
       <Button layoutX="862.0" layoutY="122.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="137.0" text="Delete" />
