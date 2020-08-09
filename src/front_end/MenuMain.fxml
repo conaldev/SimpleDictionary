@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="688.0" prefWidth="1154.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuMain">
    <children>
-      <TextField layoutX="90.0" layoutY="122.0" prefHeight="43.0" prefWidth="209.0" promptText="Enter a word" />
+      <TextField fx:id="searchWord" layoutX="90.0" layoutY="122.0" prefHeight="43.0" prefWidth="209.0" promptText="Enter a word" />
       <Label layoutX="441.0" layoutY="38.0" prefHeight="54.0" prefWidth="303.0" text="   Awesome Dictionary" textFill="#e10909">
          <font>
             <Font name="System Bold" size="21.0" />
@@ -23,9 +23,9 @@
       <TableView fx:id="table" layoutX="79.0" layoutY="217.0" prefHeight="434.0" prefWidth="934.0">
         <columns>
           <TableColumn fx:id="word" prefWidth="106.00003051757812" text="WORD" />
-          <TableColumn fx:id="pronounce" prefWidth="107.0" text="PRONOUNCE" />
-            <TableColumn fx:id="type" prefWidth="99.0" text="TYPE" />
-            <TableColumn fx:id="meaning" minWidth="0.0" prefWidth="622.0" text="               MEANING" />
+          <TableColumn fx:id="pronounce" prefWidth="166.0" text="PRONOUNCE" />
+            <TableColumn fx:id="type" prefWidth="120.0" text="TYPE" />
+            <TableColumn fx:id="meaning" minWidth="0.0" prefWidth="542.0" text="               MEANING" />
         </columns>
       </TableView>
    </children>

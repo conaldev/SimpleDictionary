@@ -13,9 +13,6 @@ public class SearchedWord {
         this.meaning = meaning;
     }
 
-    public SearchedWord() {
-    }
-
     public String getSearchedWord() {
         return searchedWord;
     }

@@ -1,5 +1,8 @@
 package controller;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
+import service.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,32 +27,43 @@ public class MenuMain implements Initializable {
     @FXML
     private TableView<SearchedWord> table;
     @FXML
-    private TableColumn<SearchedWord,String> word;
+    private TableColumn<SearchedWord, String> word;
     @FXML
-    private TableColumn<SearchedWord,String> pronounce;
+    private TableColumn<SearchedWord, String> pronounce;
     @FXML
-    private TableColumn<SearchedWord,String> type;
+    private TableColumn<SearchedWord, String> type;
     @FXML
-    private TableColumn<SearchedWord,String> meaning;
+    private TableColumn<SearchedWord, String> meaning;
+    @FXML
+    public TextField searchWord;
+
+    static final ObservableList<SearchedWord> searchedWordList = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ObservableList<SearchedWord> searchedWordList = FXCollections.observableArrayList(new SearchedWord("hello", "/helo/", "adj", "xin chào"), new SearchedWord("bonjour", "/bonjour/", "verb", "chàojkldsa;fg;fff"));
-        word.setCellValueFactory(new PropertyValueFactory<SearchedWord,String>("searchedWord"));
-        pronounce.setCellValueFactory(new PropertyValueFactory<SearchedWord,String>("pronounce"));
-        type.setCellValueFactory(new PropertyValueFactory<SearchedWord,String>("type"));
-        meaning.setCellValueFactory(new PropertyValueFactory<SearchedWord,String>("meaning"));
+        word.setCellValueFactory(new PropertyValueFactory<SearchedWord, String>("searchedWord"));
+        pronounce.setCellValueFactory(new PropertyValueFactory<SearchedWord, String>("pronounce"));
+        type.setCellValueFactory(new PropertyValueFactory<SearchedWord, String>("type"));
+        meaning.setCellValueFactory(new PropertyValueFactory<SearchedWord, String>("meaning"));
         table.setItems(searchedWordList);
     }
+
+
     public void search(ActionEvent event) {
-        Parent loader = null;
-        try {
-            loader = FXMLLoader.load(getClass().getResource("../font_end/wordDetail.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
+        String keySearchWord = searchWord.getText();
+        if (!UserControl.getInstance().isWordExist(keySearchWord)) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Dictionary doesn't have this word!");
+            alert.setHeaderText("Dictionary doesn't have this word! :((");
+            alert.show();
+        } else {
+
+            searchedWordList.add(0, new SearchedWord(keySearchWord, UserControl.getInstance().searchPronunciation(keySearchWord), UserControl.getInstance().searchWordClass(keySearchWord), UserControl.getInstance().searchMeaning(keySearchWord)));
+            word.setCellValueFactory(new PropertyValueFactory<SearchedWord, String>("searchedWord"));
+            pronounce.setCellValueFactory(new PropertyValueFactory<SearchedWord, String>("pronounce"));
+            type.setCellValueFactory(new PropertyValueFactory<SearchedWord, String>("type"));
+            meaning.setCellValueFactory(new PropertyValueFactory<SearchedWord, String>("meaning"));
+            table.setItems(searchedWordList);
         }
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(loader));
-        stage.show();
     }
 }
