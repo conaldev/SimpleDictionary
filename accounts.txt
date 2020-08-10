@@ -1,9 +1,10 @@
-*****************************
 testaccount@gmail.com
 123456
 minhvd@gmail.com
 123456
-admin@gmail.com
-admin
 chaoban@gmail.com
 ok
+chaomoinguoi@gmail.com
+123456
+vinh@gmail.com
+123

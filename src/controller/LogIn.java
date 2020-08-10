@@ -22,7 +22,7 @@ public class LogIn {
     @FXML
     TextField email;
     @FXML
-    TextField passWord;
+    PasswordField passWord;
 
     public void logIn(ActionEvent event) {
         Pattern patternEmail = Pattern.compile("^[A-Za-z0-9+_.-]{3,}@(.+)$");
