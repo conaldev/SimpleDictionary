@@ -11,7 +11,7 @@ public class EditWord {
     @FXML
     TextField word;
     @FXML
-    TextField pronounce;ad
+    TextField pronounce;
     @FXML
     TextField type;
     @FXML
