@@ -18,9 +18,12 @@ public class EditWord {
     TextField meaning;
 
     public void editWord(ActionEvent event){
-        UserControl.getInstance().changePronounce(word.getText(),pronounce.getText());
-        UserControl.getInstance().changeType(word.getText(),type.getText());
-        UserControl.getInstance().changeMeaning(word.getText(),meaning.getText());
+        if(!pronounce.getText().equals(""))
+            UserControl.getInstance().changePronounce(word.getText(),pronounce.getText());
+        if(!type.getText().equals(""))
+            UserControl.getInstance().changeType(word.getText(),type.getText());
+        if(!meaning.getText().equals(""))
+            UserControl.getInstance().changeMeaning(word.getText(),meaning.getText());
         UserControl.getInstance().setDicHashMap(DicionaryHashMap.getInstance().readToHashMapDic("dictionary.txt"));
     }
 }

@@ -105,7 +105,6 @@ public class UserControl implements IControl {
     }
     public void changeType(String keyChange,String newType) {
         String stringDic = creatStringDic();
-        newType = "*" + newType;
         String regexType = "\\*(.*?_)";
         Pattern pattern = Pattern.compile(regexType);
         Matcher matcher = pattern.matcher(this.dicHashMap.get(keyChange));
