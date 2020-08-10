@@ -111,7 +111,6 @@ public class UserControl implements IControl {
         Matcher matcher = pattern.matcher(this.dicHashMap.get(keyChange));
         if (matcher.find()) {
             String oldType = matcher.group(1);
-            System.out.println(oldType);
             stringDic = stringDic.replaceAll(oldType,newType);
         }
         writeToDictionay(stringDic, false);
