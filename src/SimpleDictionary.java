@@ -14,7 +14,7 @@ public class SimpleDictionary extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        UserControl.getInstance().setDicHashMap(new DicionaryHashMap().readToHashMapDic("dictionary.txt"));
+        UserControl.getInstance().setDicHashMap(DicionaryHashMap.getInstance().readToHashMapDic("dictionary.txt"));
         ManageAccounts.getInstance();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("front_end/login.fxml"));

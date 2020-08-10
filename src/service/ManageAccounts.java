@@ -23,18 +23,16 @@ public class ManageAccounts {
                     hashMapAccounts.put(line, passWord);
                 }
                 reader.close();
-            } catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        if(instance ==null)
-                instance =new ManageAccounts();
+        if (instance == null)
+            instance = new ManageAccounts();
         return instance;
-}
+    }
 
-    public boolean addAccount(String email, String password) {
-        if (hashMapAccounts.containsKey(email))
-            return false;
+    public void addAccount(String email, String password) {
         hashMapAccounts.put(email, password);
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter("accounts.txt", true));
@@ -44,7 +42,6 @@ public class ManageAccounts {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return true;
     }
 
     public boolean deleteAccount(String email, String password) {

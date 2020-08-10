@@ -1,10 +1,21 @@
 package service;
 
+import java.util.ArrayList;
+
 public class SearchedWord {
     private String searchedWord;
     private String pronounce;
     private String type;
     private String meaning;
+    private static ArrayList<String> arrayList = new ArrayList<>();
+
+    public static ArrayList<String> getArrayList() {
+        return arrayList;
+    }
+
+    public static void setArrayList(ArrayList<String> arrayList) {
+        SearchedWord.arrayList = arrayList;
+    }
 
     public SearchedWord(String searchedWord, String pronounce, String type, String meaning) {
         this.searchedWord = searchedWord;

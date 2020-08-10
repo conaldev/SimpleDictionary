@@ -7,6 +7,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DicionaryHashMap {
+    private static volatile DicionaryHashMap instance;
+    public static DicionaryHashMap getInstance(){
+        if(instance ==null)
+            instance = new DicionaryHashMap();
+        return instance;
+    }
     public HashMap<String, String> readToHashMapDic(String srcDicFile) {
         Scanner scanner = null;
         try {

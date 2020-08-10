@@ -95,7 +95,7 @@ public class LogIn {
         });
         Optional<Pair<String, String>> result = dialog.showAndWait();
         result.ifPresent(emailPassword -> {
-            Pattern patternEmail = Pattern.compile("^[A-Za-z0-9+_.-]{3,}@(.+)$");
+            Pattern patternEmail = Pattern.compile("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
             Matcher matcherE = patternEmail.matcher(newEmail.getText());
             if (!matcherE.matches()) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
