@@ -9,6 +9,8 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static util.Constant.DICTIONARY_FILE;
+
 public class UserControl implements IControl {
     private HashMap<String, String> dicHashMap;
     private final ArrayList<String> wordSearchedList = new ArrayList<>();
@@ -65,7 +67,7 @@ public class UserControl implements IControl {
     public void addNewWorld(String newWord, String newPronounce, String newTypeOfWord, String newMeaning) {
         String contentNewWord = newWord + " /" + newPronounce + "/\n" + "*" + newTypeOfWord + "\n" + "- " + newMeaning + "\n\n" + "@";
         writeToDictionay(contentNewWord,true);
-        UserControl.getInstance().setDicHashMap(DicionaryHashMap.getInstance().readToHashMapDic("dictionary.txt"));
+        UserControl.getInstance().setDicHashMap(DicionaryHashMap.getInstance().readToHashMapDic(DICTIONARY_FILE));
     }
 
     @Override
@@ -82,7 +84,7 @@ public class UserControl implements IControl {
         return this.dicHashMap.containsKey(keySearch);
     }
     public void writeToDictionay(String content,boolean isAppend){
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("dictionary.txt",isAppend))) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(DICTIONARY_FILE,isAppend))) {
             bufferedWriter.write(content);
            bufferedWriter.flush();
         } catch (IOException e) {
@@ -131,7 +133,7 @@ public class UserControl implements IControl {
     public String creatStringDic() {
         FileInputStream inputStream = null;
         try {
-            inputStream = new FileInputStream("dictionary.txt");
+            inputStream = new FileInputStream(DICTIONARY_FILE);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

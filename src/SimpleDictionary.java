@@ -7,6 +7,8 @@ import service.DicionaryHashMap;
 import service.ManageAccounts;
 import service.UserControl;
 
+import static util.Constant.DICTIONARY_FILE;
+
 public class SimpleDictionary extends Application {
     public static void main(String[] args) {
         launch(args);
@@ -14,7 +16,7 @@ public class SimpleDictionary extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        UserControl.getInstance().setDicHashMap(DicionaryHashMap.getInstance().readToHashMapDic("dictionary.txt"));
+        UserControl.getInstance().setDicHashMap(DicionaryHashMap.getInstance().readToHashMapDic(DICTIONARY_FILE));
         ManageAccounts.getInstance();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("front_end/login.fxml"));

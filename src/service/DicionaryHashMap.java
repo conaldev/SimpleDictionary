@@ -23,9 +23,9 @@ public class DicionaryHashMap {
         scanner.useDelimiter("\\Z");
         String stringDic = scanner.next();
         scanner.close();
-        stringDic = stringDic.replaceAll("\\n", "_");
-        stringDic = stringDic.replaceAll("(\\s/)", "///");
-        String regexKeyValue = "@(.*?)/(.*?)_{2}";
+//        String stringReplace = stringDic.replace("\n", "_");
+//        stringDic = stringDic.replaceAll("(\\s/)", "///");
+        String regexKeyValue = "@(.*?) /(.*?)/\\n[*]{1}";
         HashMap<String, String> dictionaryMap = new HashMap<>();
         Pattern pattern = Pattern.compile(regexKeyValue);
         Matcher matcher = pattern.matcher(stringDic);

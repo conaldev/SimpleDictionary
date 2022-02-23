@@ -6,6 +6,8 @@ import javafx.scene.control.TextField;
 import service.DicionaryHashMap;
 import service.UserControl;
 
+import static util.Constant.DICTIONARY_FILE;
+
 
 public class EditWord {
     @FXML
@@ -24,6 +26,6 @@ public class EditWord {
             UserControl.getInstance().changeType(word.getText(),type.getText());
         if(!meaning.getText().equals(""))
             UserControl.getInstance().changeMeaning(word.getText(),meaning.getText());
-        UserControl.getInstance().setDicHashMap(DicionaryHashMap.getInstance().readToHashMapDic("dictionary.txt"));
+        UserControl.getInstance().setDicHashMap(DicionaryHashMap.getInstance().readToHashMapDic(DICTIONARY_FILE));
     }
 }
